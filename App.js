@@ -15,18 +15,20 @@ export default class App extends Component {
     else
       this.setState(previousState => {
         return {
-          placeLists: previousState.placeLists.concat(previousState.value)
+          placeLists: previousState.placeLists.concat({
+            key: Math.random(),
+            val: previousState.value
+          })
         };
       });
   };
-
 
   //to delete an place List from placeList
   onItemClick = index => {
     this.setState(previousState => {
       return {
         placeLists: previousState.placeLists.filter(
-          (place, key) => key !== index
+          (place, key) => place.key !== index
         )
       };
     });
