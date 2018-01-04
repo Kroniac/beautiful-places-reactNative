@@ -9,6 +9,7 @@ export default class App extends Component {
     placeLists: []
   };
 
+  //to add a place to the placeList
   addPlace = () => {
     if (this.state.value.trim() === '') return;
     else
@@ -19,6 +20,18 @@ export default class App extends Component {
       });
   };
 
+
+  //to delete an place List from placeList
+  onItemClick = index => {
+    this.setState(previousState => {
+      return {
+        placeLists: previousState.placeLists.filter(
+          (place, key) => key !== index
+        )
+      };
+    });
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -27,7 +40,10 @@ export default class App extends Component {
           val={this.state.value}
           onPress={this.addPlace}
         />
-        <PlaceList placeLists={this.state.placeLists} />
+        <PlaceList
+          placeLists={this.state.placeLists}
+          onItemDeleted={index => this.onItemClick(index)}
+        />
       </View>
     );
   }

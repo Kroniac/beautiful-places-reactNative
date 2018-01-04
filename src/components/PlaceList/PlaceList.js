@@ -4,7 +4,11 @@ import ListItem from '../ListItem/ListItem';
 
 const placeList = props => {
   const places = props.placeLists.map((place, index) => (
-    <ListItem key={index} placeItem={place} />
+    <ListItem
+      key={index}
+      placeItem={place}
+      onItemPressed={() => props.onItemDeleted(index)}
+    />
   ));
   return <View style={styles.lists}>{places}</View>;
 };

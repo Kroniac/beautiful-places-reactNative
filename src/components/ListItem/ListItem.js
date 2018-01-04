@@ -1,7 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 const listItem = props => {
-  return <Text style={styles.listItem}>{props.placeItem}</Text>;
+  return (
+    <TouchableOpacity onPress={props.onItemPressed}>
+      <Text style={styles.listItem}>{props.placeItem}</Text>
+    </TouchableOpacity>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -10,7 +14,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#eee',
     marginBottom: 5,
-    textAlign:'center'
+    textAlign: 'center'
   }
 });
 
