@@ -29,6 +29,22 @@ export default class App extends Component {
       });
   };
 
+  onModalClosedHandler = () => {
+    this.setState({
+      selectedPlace: null
+    });
+  };
+
+  onPlaceDeletedHandler = () => {
+    this.setState(previousState => {
+      return {
+        placeLists: previousState.placeLists.filter(
+          (place, key) => place.key !== this.state.selectedPlace.key
+        ),
+        selectedPlace: null
+      };
+    });
+  };
   //to delete an place List from placeList
   onItemSelect = index => {
     this.setState(previousState => {
