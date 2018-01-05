@@ -13,13 +13,13 @@ class App extends Component {
       <View style={styles.container}>
         <PlaceDetail
           selectedPlace={this.props.selectedPlace}
-          onPlaceDeleted={this.props.onDeletePlace}
-          onModalClosed={this.props.onUnSelectPlace}
+          onPlaceDeleted={() => this.props.onDeletePlace()}
+          onModalClosed={() => this.props.onUnSelectPlace()}
         />
         <InputPlaces
           changeText={val => this.props.onChangeValue(val)}
           val={this.props.value}
-          onPress={this.props.onAddPlace}
+          onPress={() => this.props.onAddPlace()}
         />
         <PlaceList
           placeLists={this.props.places}

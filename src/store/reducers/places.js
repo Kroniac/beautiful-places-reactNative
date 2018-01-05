@@ -20,7 +20,8 @@ const reducer = (state = initState, action) => {
               uri:
                 'http://e-cdn-images.deezer.com/images/artist/b2af40d06fb0ccaf3ebee179f61cd80d/200x200-000000-80-0-0.jpg'
             }
-          })
+          }),
+          value: ''
         };
     case actionTypes.DELETE_PLACE:
       return {
