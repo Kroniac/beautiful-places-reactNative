@@ -13,9 +13,9 @@ const reducer = (state = initState, action) => {
       else
         return {
           ...state,
-          placeLists: previousState.placeLists.concat({
+          placeLists: state.placeLists.concat({
             key: Math.random(),
-            name: previousState.value,
+            name: state.value,
             image: {
               uri:
                 'http://e-cdn-images.deezer.com/images/artist/b2af40d06fb0ccaf3ebee179f61cd80d/200x200-000000-80-0-0.jpg'
@@ -45,7 +45,7 @@ const reducer = (state = initState, action) => {
     case actionTypes.ON_CHANGE_TEXT:
       return {
         ...state,
-        value: value
+        value: action.value
       };
     default:
       return state;

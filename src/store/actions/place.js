@@ -5,10 +5,9 @@ export const addPlace = () => {
     type: actionTypes.ADD_PLACE
   };
 };
-export const deletePlace = key => {
+export const deletePlace = () => {
   return {
-    type: actionTypes.DELETE_PLACE,
-    placeKey: key
+    type: actionTypes.DELETE_PLACE
   };
 };
 export const selectPlace = key => {
