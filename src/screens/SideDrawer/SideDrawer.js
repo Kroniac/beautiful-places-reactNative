@@ -7,6 +7,7 @@ class SideDrawer extends Component {
     return (
       <View style={styles.container}>
         <Text>Hey, this is a sideDrawer</Text>
+        <Text>Hey, this is a sideDrawer</Text>
       </View>
     );
   }
@@ -15,6 +16,7 @@ class SideDrawer extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 15,
     backgroundColor: '#fff'
   }
 });

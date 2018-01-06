@@ -14,7 +14,8 @@ class SharePlace extends Component {
     if (event.type === 'NavBarButtonPress') {
       if (event.id === 'sideDrawerToggle') {
         this.props.navigator.toggleDrawer({
-            side : 'left'
+            side : 'left',
+            animated : true
 
         });
       }
