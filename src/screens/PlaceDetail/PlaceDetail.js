@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   View,
   Modal,
@@ -9,36 +9,35 @@ import {
   TouchableOpacity
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { connect } from 'react-redux';
+import * as actions from '../../store/actions/index';
 
-const placeDetail = props => {
-  // let content = null;
-  // content = props.selectedPlace ? (
-  //   <View>
+class placeDetail extends Component {
+  onDeleteHandler = key => {
+    this.props.onDelete(key);
+    this.props.navigator.pop();
+  };
+  render() {
+    return (
+      <View style={styles.container}>
+        <Image
+          style={styles.placeImage}
+          source={this.props.selectedPlace.image}
+        />
+        <Text style={styles.placeName}>{this.props.selectedPlace.name}</Text>
 
-  //   </View>
-  // ) : null;
-  return (
-    <View style={styles.container}>
-      <Image style={styles.placeImage} source={props.selectedPlace.image} />
-      <Text style={styles.placeName}>{props.selectedPlace.name}</Text>
-
-      <View style={styles.button}>
-        <TouchableOpacity
-          style={styles.deleteIcon}
-          onPress={props.onPlaceDeleted}
-        >
-          <Icon name="ios-trash" size={25} color="blue" />
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.deleteIcon}
-          onPress={props.onModalClosed}
-        >
-          <Icon name="md-close" size={25} color="blue" />
-        </TouchableOpacity>
+        <View style={styles.button}>
+          <TouchableOpacity
+            style={styles.deleteIcon}
+            onPress={() => this.onDeleteHandler(this.props.selectedPlace.key)}
+          >
+            <Icon name="ios-trash" size={25} color="blue" />
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
-  );
-};
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -68,4 +67,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default placeDetail;
+const mapDispatchToProps = dispatch => {
+  return {
+    onDelete: key => dispatch(actions.deletePlace(key))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(placeDetail);

@@ -26,7 +26,12 @@ Navigation.registerComponent(
   store,
   Provider
 );
-Navigation.registerComponent('beautifulPlaces.PlaceDetail', () => PlaceDetail);
+Navigation.registerComponent(
+  'beautifulPlaces.PlaceDetail',
+  () => PlaceDetail,
+  store,
+  Provider
+);
 
 Navigation.startSingleScreenApp({
   screen: {
