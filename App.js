@@ -38,6 +38,6 @@ Navigation.registerComponent('beautifulPlaces.SideDrawer', () => SideDrawer);
 Navigation.startSingleScreenApp({
   screen: {
     screen: 'beautifulPlaces.Auth', // unique ID registered with Navigation.registerScreen
-    title: 'Welcome' // title of the screen as appears in the nav bar (optional)
+   // title: 'Welcome' // title of the screen as appears in the nav bar (optional)
   }
 });
