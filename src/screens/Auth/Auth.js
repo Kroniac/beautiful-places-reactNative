@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet, ImageBackground } from 'react-native';
 import MainTab from '../MainTabs/MainTab';
 import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
+import HeadingText from '../../components/UI/HeadingText/HeadingText';
 class Auth extends Component {
   static navigatorStyle = {
     navBarHidden: true
@@ -20,6 +21,9 @@ class Auth extends Component {
         }}
       >
         <View style={styles.container}>
+          <HeadingText style={{ color: '#ffe', paddingBottom: 10 }}>
+            Please Login
+          </HeadingText>
           <Button title="Switch To Login" onPress={this.loginHandler} />
           <View style={styles.inputContainer}>
             <DefaultInput
