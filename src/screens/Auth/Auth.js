@@ -8,12 +8,13 @@ import {
   ImageBackground
 } from 'react-native';
 import MainTab from '../MainTabs/MainTab';
+import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
 class Auth extends Component {
   static navigatorStyle = {
     navBarHidden: true
   };
 
-  changeScreen = () => {
+  loginHandler = () => {
     MainTab();
   };
   render() {
@@ -26,25 +27,14 @@ class Auth extends Component {
         }}
       >
         <View style={styles.container}>
-          <Text>Welcome</Text>
-          <View style={{ width: '100%', marginTop: 15, marginBottom: 15 }}>
-            <TextInput
-              style={styles.input}
-              placeholder="email-address"
-              underlineColorAndroid="transparent"
-            />
-            <TextInput
-              style={styles.input}
-              placeholder="password"
-              underlineColorAndroid="transparent"
-            />
-            <TextInput
-              style={styles.input}
-              placeholder="confirm password"
-              underlineColorAndroid="transparent"
-            />
+          <Button title="Switch To Login" onPress={this.loginHandler} />
+          <View style={styles.inputContainer}>
+            <DefaultInput placeholder="Your Email Address" />
+            <DefaultInput placeholder="Password" />
+            <DefaultInput placeholder="Confirm password" />
           </View>
-          <Button title="Click Me" onPress={this.changeScreen} />
+
+          <Button title="Submit" onPress={this.loginHandler} />
         </View>
       </ImageBackground>
     );
@@ -58,12 +48,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 15
   },
-  input: {
-    textAlign: 'center',
-    borderColor: '#eee',
-    borderWidth: 1,
-    padding: 5,
-    margin: 8
+  inputContainer: {
+    width: '100%',
+    marginTop: 15,
+    marginBottom: 15
   }
 });
 
