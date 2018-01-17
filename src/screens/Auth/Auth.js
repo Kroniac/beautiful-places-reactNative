@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  Button,
-  TextInput,
-  StyleSheet,
-  ImageBackground
-} from 'react-native';
+import { View, Text, Button, StyleSheet, ImageBackground } from 'react-native';
 import MainTab from '../MainTabs/MainTab';
 import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
 class Auth extends Component {
@@ -29,9 +22,18 @@ class Auth extends Component {
         <View style={styles.container}>
           <Button title="Switch To Login" onPress={this.loginHandler} />
           <View style={styles.inputContainer}>
-            <DefaultInput placeholder="Your Email Address" />
-            <DefaultInput placeholder="Password" />
-            <DefaultInput placeholder="Confirm password" />
+            <DefaultInput
+              placeholder="Your Email Address"
+              style={{ backgroundColor: '#eee', borderColor: '#bbb' }}
+            />
+            <DefaultInput
+              placeholder="Password"
+              style={{ backgroundColor: '#eee', borderColor: '#bbb' }}
+            />
+            <DefaultInput
+              placeholder="Confirm password"
+              style={{ backgroundColor: '#eee', borderColor: '#bbb' }}
+            />
           </View>
 
           <Button title="Submit" onPress={this.loginHandler} />
