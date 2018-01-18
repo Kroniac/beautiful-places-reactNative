@@ -6,33 +6,67 @@ import {
   StyleSheet,
   Image,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  Dimensions
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index';
 
 class placeDetail extends Component {
+  state = {
+    viewMode: Dimensions.get('window').height > 500 ? 'portrait' : 'landscape'
+  };
+
+  constructor(props) {
+    super(props);
+    Dimensions.addEventListener('change', this.updateStyles);
+  }
+
+  componentWillUnmount() {
+    Dimensions.removeEventListener('change', this.updateStyles);
+  }
+
+  updateStyles = dims => {
+    this.setState({
+      viewMode: dims.window.height > 500 ? 'portrait' : 'landscape'
+    });
+  };
+
   onDeleteHandler = key => {
     this.props.onDelete(key);
     this.props.navigator.pop();
   };
   render() {
     return (
-      <View style={styles.container}>
-        <Image
-          style={styles.placeImage}
-          source={this.props.selectedPlace.image}
-        />
-        <Text style={styles.placeName}>{this.props.selectedPlace.name}</Text>
-
-        <View style={styles.button}>
-          <TouchableOpacity
-            style={styles.deleteIcon}
-            onPress={() => this.onDeleteHandler(this.props.selectedPlace.key)}
-          >
-            <Icon name="ios-trash" size={25} color="blue" />
-          </TouchableOpacity>
+      <View
+        style={[
+          styles.container,
+          this.state.viewMode === 'portrait'
+            ? styles.portraitContainer
+            : styles.landscapeContainer
+        ]}
+      >
+        <View style={styles.subContainer}>
+          <Image
+            style={styles.placeImage}
+            source={this.props.selectedPlace.image}
+          />
+        </View>
+        <View style={styles.subContainer}>
+          <View>
+            <Text style={styles.placeName}>
+              {this.props.selectedPlace.name}
+            </Text>
+          </View>
+          <View style={styles.button}>
+            <TouchableOpacity
+              style={styles.deleteIcon}
+              onPress={() => this.onDeleteHandler(this.props.selectedPlace.key)}
+            >
+              <Icon name="ios-trash" size={25} color="blue" />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     );
@@ -41,6 +75,17 @@ class placeDetail extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    margin: 22
+  },
+  portraitContainer: {
+    flexDirection: 'column'
+  },
+  landscapeContainer: {
+    flexDirection: 'row'
+  },
+
+  subContainer: {
     flex: 1
   },
   placeImage: {
