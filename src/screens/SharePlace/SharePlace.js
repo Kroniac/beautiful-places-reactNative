@@ -5,12 +5,14 @@ import {
   StyleSheet,
   TextInput,
   Button,
-  ScrollView
+  ScrollView,
+  Image
 } from 'react-native';
 import InputPlaces from '../../components/InputPlaces/InputPlaces';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index';
 import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
+import Header from '../../components/UI/HeadingText/HeadingText';
 
 class SharePlace extends Component {
   constructor(props) {
@@ -33,9 +35,15 @@ class SharePlace extends Component {
     return (
       <ScrollView>
         <View style={styles.container}>
-          <Text>Share a place with us</Text>
+          <Header>Share a place with us</Header>
           <View style={styles.placeholder}>
-            <Text>Image Preview</Text>
+            <Image
+              style={{ flex: 1 }}
+              source={{
+                uri:
+                  'http://e-cdn-images.deezer.com/images/artist/b2af40d06fb0ccaf3ebee179f61cd80d/200x200-000000-80-0-0.jpg'
+              }}
+            />
           </View>
           <View style={styles.buttons}>
             <Button title="Pick Image" />
