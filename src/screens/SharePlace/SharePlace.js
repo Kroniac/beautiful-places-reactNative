@@ -13,6 +13,8 @@ import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index';
 import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
 import Header from '../../components/UI/HeadingText/HeadingText';
+import PickImage from '../../components/PickImage/PickImage';
+import PickLocation from '../../components/PickLocation/PickLocation';
 
 class SharePlace extends Component {
   constructor(props) {
@@ -31,32 +33,24 @@ class SharePlace extends Component {
     }
   };
 
+  showValue = () => {
+    alert(this.props.value);
+  };
+
   render() {
     return (
       <ScrollView>
         <View style={styles.container}>
           <Header>Share a place with us</Header>
-          <View style={styles.placeholder}>
-            <Image
-              style={{ flex: 1 }}
-              source={{
-                uri:
-                  'http://e-cdn-images.deezer.com/images/artist/b2af40d06fb0ccaf3ebee179f61cd80d/200x200-000000-80-0-0.jpg'
-              }}
-            />
-          </View>
+          <PickImage />
+          <PickLocation />
+          <DefaultInput
+            onChangeText={val => this.props.onChangePlace(val)}
+            placeholder="Place Name"
+            value={this.props.value}
+          />
           <View style={styles.buttons}>
-            <Button title="Pick Image" />
-          </View>
-          <View style={styles.placeholder}>
-            <Text>Map</Text>
-          </View>
-          <View style={styles.buttons}>
-            <Button title="Locate Me" />
-          </View>
-          <DefaultInput placeholder="Place Name" />
-          <View style={styles.buttons}>
-            <Button title="Share The Place" />
+            <Button title="Share The Place" onPress={this.showValue} />
           </View>
           {/* <InputPlaces
           changeText={val => this.props.onChangePlace(val)}
