@@ -50,7 +50,7 @@ class SharePlace extends Component {
             value={this.props.value}
           />
           <View style={styles.buttons}>
-            <Button title="Share The Place" onPress={this.showValue} />
+            <Button title="Share The Place" onPress={this.props.onAddPlace} />
           </View>
           {/* <InputPlaces
           changeText={val => this.props.onChangePlace(val)}

@@ -18,7 +18,7 @@ class Auth extends Component {
         style={{ flex: 1 }}
         source={{
           uri:
-            'http://e-cdn-images.deezer.com/images/artist/b2af40d06fb0ccaf3ebee179f61cd80d/200x200-000000-80-0-0.jpg'
+            'https://www.planwallpaper.com/static/images/old-paper-floral-parchment-background-texture_wunZAKZ.jpg'
         }}
       >
         <View style={styles.container}>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     padding: 15
   },
   inputContainer: {
-    alignItems:'center',
+    alignItems: 'center',
     width: '100%',
     marginTop: 15,
     marginBottom: 15
