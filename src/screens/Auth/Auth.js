@@ -14,6 +14,8 @@ import HeadingText from '../../components/UI/HeadingText/HeadingText';
 import MainText from '../../components/UI/MainText/MainText';
 import Validation from '../../utility/validation';
 import validation from '../../utility/validation';
+import { connect } from 'react-redux';
+import * as actions from '../../store/actions/index';
 class Auth extends Component {
   state = {
     viewMode: Dimensions.get('window').height > 500 ? 'portrait' : 'landscape',
@@ -67,6 +69,11 @@ class Auth extends Component {
   };
 
   loginHandler = () => {
+    const authData = {
+      email: this.state.controls.email.value,
+      password: this.state.controls.password.value
+    };
+    this.props.onLogin(authData);
     MainTab();
   };
 
@@ -224,4 +231,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Auth;
+mapDispatchToProps = dispatch => {
+  return {
+    onLogin: authData => dispatch(actions.tryAuth(authData))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Auth);

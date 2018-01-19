@@ -5,3 +5,5 @@ export {
   deletePlace,
   onChangePlace
 } from './place.js';
+
+export { tryAuth } from './auth.js';
