@@ -4,7 +4,7 @@ const validation = (val, rules, connectedValue) => {
     switch (rule) {
       case 'isEmail':
         isValid = isValid && emailValidator(val);
-        breakl;
+        break;
       case 'minLength':
         isValid = isValid && minLengthValidator(val, rules[rule]);
         break;
@@ -27,7 +27,7 @@ const minLengthValidator = (val, minLength) => {
   return val.length >= minLength;
 };
 const equalToValidator = (val, checkValue) => {
-  val === checkValue;
+  return val === checkValue;
 };
 
 export default validation;
