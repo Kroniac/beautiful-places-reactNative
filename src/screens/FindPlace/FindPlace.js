@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import PlaceList from '../../components/PlaceList/PlaceList';
 
 class FindPlace extends Component {
+  state = {
+    placesLoaded: false
+  };
   constructor(props) {
     super(props);
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
@@ -32,13 +35,36 @@ class FindPlace extends Component {
       }
     });
   };
+
+  placesSearchHandler = () => {
+    this.setState({
+      placesLoaded: true
+    });
+  };
   render() {
-    return (
-      <View style={styles.container}>
+    let content = (
+      <TouchableOpacity onPress={this.placesSearchHandler}>
+        <View style={styles.searchButton}>
+          <Text style={styles.searchButtonText}>Find Places</Text>
+        </View>
+      </TouchableOpacity>
+    );
+
+    if (this.state.placesLoaded) {
+      content = (
         <PlaceList
           placeLists={this.props.placeList}
           onItemSelected={this.itemSelectedHandler}
         />
+      );
+    }
+    return (
+      <View
+        style={
+          this.state.placesLoaded ? styles.container : styles.buttonContainer
+        }
+      >
+        {content}
       </View>
     );
   }
@@ -48,6 +74,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 15
+  },
+  buttonContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  searchButton: {
+    borderColor: 'orange',
+    borderRadius: 50,
+    padding: 20,
+    borderWidth: 3
+  },
+  searchButtonText: {
+    color: 'orange',
+    fontWeight: 'bold',
+    fontSize: 26
   }
 });
 
