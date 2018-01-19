@@ -14,7 +14,30 @@ import HeadingText from '../../components/UI/HeadingText/HeadingText';
 import MainText from '../../components/UI/MainText/MainText';
 class Auth extends Component {
   state = {
-    viewMode: Dimensions.get('window').height > 500 ? 'portrait' : 'landscape'
+    viewMode: Dimensions.get('window').height > 500 ? 'portrait' : 'landscape',
+    controls: {
+      email: {
+        value: '',
+        valid: false,
+        validationRules: {
+          isEmail: true
+        }
+      },
+      password: {
+        value: '',
+        valid: false,
+        validationRules: {
+          minLength: 6
+        }
+      },
+      confirmPassword: {
+        value: '',
+        valid: false,
+        validationRules: {
+          equalTo: 'password'
+        }
+      }
+    }
   };
 
   constructor(props) {
@@ -37,6 +60,21 @@ class Auth extends Component {
 
   loginHandler = () => {
     MainTab();
+  };
+
+  updateInputState = (key, val) => {
+    this.setState(previousState => {
+      return {
+        ...previousState,
+        controls: {
+          ...previousState.controls,
+          [key]: {
+            ...previousState.controls[key],
+            value: val
+          }
+        }
+      };
+    });
   };
   render() {
     let headerText = null;
@@ -62,6 +100,8 @@ class Auth extends Component {
             <DefaultInput
               placeholder="Your Email Address"
               style={{ backgroundColor: '#eee', borderColor: '#bbb' }}
+              onChangeText={val => this.updateInputState('email', val)}
+              value={this.state.controls.email.value}
             />
             <View
               style={
@@ -83,6 +123,8 @@ class Auth extends Component {
                     backgroundColor: '#eee',
                     borderColor: '#bbb'
                   }}
+                  onChangeText={val => this.updateInputState('password', val)}
+                  value={this.state.controls.password.value}
                 />
               </View>
               <View
@@ -98,6 +140,10 @@ class Auth extends Component {
                     backgroundColor: '#eee',
                     borderColor: '#bbb'
                   }}
+                  onChangeText={val =>
+                    this.updateInputState('confirmPassword', val)
+                  }
+                  value={this.state.controls.confirmPassword.value}
                 />
               </View>
             </View>
