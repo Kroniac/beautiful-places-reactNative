@@ -12,6 +12,8 @@ import MainTab from '../MainTabs/MainTab';
 import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
 import HeadingText from '../../components/UI/HeadingText/HeadingText';
 import MainText from '../../components/UI/MainText/MainText';
+import Validation from '../../utility/validation';
+import validation from '../../utility/validation';
 class Auth extends Component {
   state = {
     viewMode: Dimensions.get('window').height > 500 ? 'portrait' : 'landscape',
@@ -63,6 +65,16 @@ class Auth extends Component {
   };
 
   updateInputState = (key, val) => {
+    let connectedValue = {};
+    if (this.state.controls[key].validationRules.equalTo) {
+      const equalControl = this.state.controls[key].validationRules.equalTo;
+      const equalValue = this.state.controls[equalControl].value;
+      connectedValue = {
+        ...connectedValue,
+        equalTo: equalValue
+      };
+    }
+
     this.setState(previousState => {
       return {
         ...previousState,
@@ -70,7 +82,12 @@ class Auth extends Component {
           ...previousState.controls,
           [key]: {
             ...previousState.controls[key],
-            value: val
+            value: val,
+            valid: validation(
+              val,
+              previousState.controls[key].validationRules,
+              connectedValue
+            )
           }
         }
       };
