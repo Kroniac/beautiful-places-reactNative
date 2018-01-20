@@ -36,6 +36,10 @@ class SharePlace extends Component {
       location: {
         value: null,
         valid: false
+      },
+      image: {
+        value: null,
+        valid: false
       }
     }
   };
@@ -85,11 +89,27 @@ class SharePlace extends Component {
     });
   };
 
+  imagePickHandler = image => {
+    this.setState(prevState => {
+      return {
+        controls: {
+          ...prevState.controls,
+          image: {
+            value: image,
+            valid: true
+          }
+        }
+      };
+    });
+  };
+
   onAddPlaceHandler = () => {
     this.props.onAddPlace(
       this.state.controls.placeName.value,
-      this.state.controls.location.value
+      this.state.controls.location.value,
+      this.state.controls.image.value
     );
+    console.log(this.props.placeList);
   };
 
   render() {
@@ -97,7 +117,7 @@ class SharePlace extends Component {
       <ScrollView>
         <View style={styles.container}>
           <Header>Share a place with us</Header>
-          <PickImage />
+          <PickImage onImagePick={this.imagePickHandler} />
           <PickLocation onLocationPick={this.locationPickHandler} />
           <DefaultInput
             onChangeText={this.placeNameChangeHandler}
@@ -112,7 +132,8 @@ class SharePlace extends Component {
               disabled={
                 !(
                   this.state.controls.placeName.valid &&
-                  this.state.controls.location.valid
+                  this.state.controls.location.valid &&
+                  this.state.controls.image.valid
                 )
               }
               onPress={this.onAddPlaceHandler}
@@ -155,8 +176,8 @@ mapStateToProps = state => {
 
 mapDispatchToProps = dispatch => {
   return {
-    onAddPlace: (val, locationValue) =>
-      dispatch(actions.addPlace(val, locationValue))
+    onAddPlace: (val, locationValue, imageValue) =>
+      dispatch(actions.addPlace(val, locationValue, imageValue))
   };
 };
 

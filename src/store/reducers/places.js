@@ -14,8 +14,7 @@ const reducer = (state = initState, action) => {
           key: Math.random(),
           name: action.value,
           image: {
-            uri:
-              'http://e-cdn-images.deezer.com/images/artist/b2af40d06fb0ccaf3ebee179f61cd80d/200x200-000000-80-0-0.jpg'
+            uri: action.imageValue.uri
           },
           location: action.locationValue
         })
