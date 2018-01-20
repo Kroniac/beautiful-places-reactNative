@@ -139,6 +139,7 @@ class Auth extends Component {
             value={this.state.controls.confirmPassword.value}
             valid={this.state.controls.confirmPassword.valid}
             touched={this.state.controls.confirmPassword.touched}
+            secureTextEntry
           />
         </View>
       );
@@ -178,6 +179,8 @@ class Auth extends Component {
               value={this.state.controls.email.value}
               valid={this.state.controls.email.valid}
               touched={this.state.controls.email.touched}
+              keyboardType="email-address"
+              autoCapitalize="none"
             />
             <View
               style={
@@ -205,6 +208,7 @@ class Auth extends Component {
                   value={this.state.controls.password.value}
                   valid={this.state.controls.password.valid}
                   touched={this.state.controls.password.touched}
+                  secureTextEntry
                 />
               </View>
               {signupMode}
