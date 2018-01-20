@@ -19,6 +19,7 @@ import * as actions from '../../store/actions/index';
 class Auth extends Component {
   state = {
     viewMode: Dimensions.get('window').height > 500 ? 'portrait' : 'landscape',
+    authMode: 'login',
     controls: {
       email: {
         value: '',
@@ -107,15 +108,53 @@ class Auth extends Component {
       };
     });
   };
+
+  switchAuthMode = () => {
+    this.setState(prevState => {
+      return {
+        authMode: prevState.authMode === 'login' ? 'signup' : 'login'
+      };
+    });
+  };
+
   render() {
     let headerText = null;
+
+    const signupMode =
+      this.state.authMode === 'login' ? null : (
+        <View
+          style={
+            this.state.viewMode === 'portrait'
+              ? styles.portraitPasswordWrapper
+              : styles.landscapePasswordWrapper
+          }
+        >
+          <DefaultInput
+            placeholder="Confirm password"
+            style={{
+              backgroundColor: '#eee',
+              borderColor: '#bbb'
+            }}
+            onChangeText={val => this.updateInputState('confirmPassword', val)}
+            value={this.state.controls.confirmPassword.value}
+            valid={this.state.controls.confirmPassword.valid}
+            touched={this.state.controls.confirmPassword.touched}
+          />
+        </View>
+      );
     if (this.state.viewMode === 'portrait') {
       headerText = (
         <MainText>
-          <HeadingText style={{ paddingBottom: 10 }}>Please Login</HeadingText>
+          <HeadingText style={{ paddingBottom: 10 }}>
+            Please {this.state.authMode === 'login' ? 'Login' : 'Sign Up'}
+          </HeadingText>
         </MainText>
       );
     }
+    const authModeSwitchButtonTitle = [
+      'Switch To',
+      this.state.authMode === 'login' ? 'Sign Up' : 'Login'
+    ].join(' ');
     return (
       <ImageBackground
         style={{ flex: 1 }}
@@ -126,7 +165,11 @@ class Auth extends Component {
       >
         <View style={styles.container}>
           {headerText}
-          <Button title="Switch To Login" onPress={this.loginHandler} />
+          <Button
+            title={authModeSwitchButtonTitle}
+            onPress={this.switchAuthMode}
+          />
+
           <View style={styles.inputContainer}>
             <DefaultInput
               placeholder="Your Email Address"
@@ -147,7 +190,9 @@ class Auth extends Component {
                 style={
                   this.state.viewMode === 'portrait'
                     ? styles.portraitPasswordWrapper
-                    : styles.landscapePasswordWrapper
+                    : this.state.authMode === 'login'
+                      ? { width: '100%' }
+                      : styles.landscapePasswordWrapper
                 }
               >
                 <DefaultInput
@@ -162,27 +207,7 @@ class Auth extends Component {
                   touched={this.state.controls.password.touched}
                 />
               </View>
-              <View
-                style={
-                  this.state.viewMode === 'portrait'
-                    ? styles.portraitPasswordWrapper
-                    : styles.landscapePasswordWrapper
-                }
-              >
-                <DefaultInput
-                  placeholder="Confirm password"
-                  style={{
-                    backgroundColor: '#eee',
-                    borderColor: '#bbb'
-                  }}
-                  onChangeText={val =>
-                    this.updateInputState('confirmPassword', val)
-                  }
-                  value={this.state.controls.confirmPassword.value}
-                  valid={this.state.controls.confirmPassword.valid}
-                  touched={this.state.controls.confirmPassword.touched}
-                />
-              </View>
+              {signupMode}
             </View>
           </View>
 
@@ -193,7 +218,8 @@ class Auth extends Component {
               !(
                 this.state.controls.email.valid &&
                 this.state.controls.password.valid &&
-                this.state.controls.confirmPassword.valid
+                (this.state.controls.confirmPassword.valid ||
+                  this.state.authMode === 'login')
               )
             }
           />
