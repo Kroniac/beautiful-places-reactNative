@@ -1,9 +1,10 @@
 import * as actionTypes from './actionTypes';
 
-export const addPlace = val => {
+export const addPlace = (val, locationValue) => {
   return {
     type: actionTypes.ADD_PLACE,
-    value: val
+    value: val,
+    locationValue: locationValue
   };
 };
 export const deletePlace = key => {
@@ -21,11 +22,5 @@ export const selectPlace = key => {
 export const unSelectPlace = () => {
   return {
     type: actionTypes.UNSELECT_PLACE
-  };
-};
-export const onChangePlace = value => {
-  return {
-    type: actionTypes.ON_CHANGE_TEXT,
-    value: value
   };
 };

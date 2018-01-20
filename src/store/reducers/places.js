@@ -8,20 +8,18 @@ initState = {
 const reducer = (state = initState, action) => {
   switch (action.type) {
     case actionTypes.ADD_PLACE:
-      if (action.value.trim() === '') return state;
-      else
-        return {
-          ...state,
-          placeLists: state.placeLists.concat({
-            key: Math.random(),
-            name: action.value,
-            image: {
-              uri:
-                'http://e-cdn-images.deezer.com/images/artist/b2af40d06fb0ccaf3ebee179f61cd80d/200x200-000000-80-0-0.jpg'
-            }
-          }),
-          value: ''
-        };
+      return {
+        ...state,
+        placeLists: state.placeLists.concat({
+          key: Math.random(),
+          name: action.value,
+          image: {
+            uri:
+              'http://e-cdn-images.deezer.com/images/artist/b2af40d06fb0ccaf3ebee179f61cd80d/200x200-000000-80-0-0.jpg'
+          },
+          location: action.locationValue
+        })
+      };
     case actionTypes.DELETE_PLACE:
       return {
         ...state,
@@ -38,11 +36,6 @@ const reducer = (state = initState, action) => {
       return {
         ...state,
         selectedPlace: null
-      };
-    case actionTypes.ON_CHANGE_TEXT:
-      return {
-        ...state,
-        value: action.value
       };
     default:
       return state;

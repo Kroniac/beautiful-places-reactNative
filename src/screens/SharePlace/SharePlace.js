@@ -32,6 +32,10 @@ class SharePlace extends Component {
         validationRules: {
           notEmpty: true
         }
+      },
+      location: {
+        value: null,
+        valid: false
       }
     }
   };
@@ -67,8 +71,27 @@ class SharePlace extends Component {
     });
   };
 
+  locationPickHandler = location => {
+    this.setState(prevState => {
+      return {
+        controls: {
+          ...prevState.controls,
+          location: {
+            value: location,
+            valid: true
+          }
+        }
+      };
+    });
+  };
+
   onAddPlaceHandler = () => {
-    this.props.onAddPlace(this.state.controls.placeName.value);
+    this.props.onAddPlace(
+      this.state.controls.placeName.value,
+      this.state.controls.location.value
+    );
+
+    console.log(this.props.placeList);
   };
 
   render() {
@@ -77,7 +100,7 @@ class SharePlace extends Component {
         <View style={styles.container}>
           <Header>Share a place with us</Header>
           <PickImage />
-          <PickLocation />
+          <PickLocation onLocationPick={this.locationPickHandler} />
           <DefaultInput
             onChangeText={this.placeNameChangeHandler}
             placeholder="Place Name"
@@ -88,7 +111,12 @@ class SharePlace extends Component {
           <View style={styles.buttons}>
             <Button
               title="Share The Place"
-              disabled={!this.state.controls.placeName.valid}
+              disabled={
+                !(
+                  this.state.controls.placeName.valid &&
+                  this.state.controls.location.valid
+                )
+              }
               onPress={this.onAddPlaceHandler}
             />
           </View>
@@ -123,13 +151,14 @@ const styles = StyleSheet.create({
 
 mapStateToProps = state => {
   return {
-    placeList: state.places.placeList
+    placeList: state.places.placeLists
   };
 };
 
 mapDispatchToProps = dispatch => {
   return {
-    onAddPlace: val => dispatch(actions.addPlace(val))
+    onAddPlace: (val, locationValue) =>
+      dispatch(actions.addPlace(val, locationValue))
   };
 };
 
