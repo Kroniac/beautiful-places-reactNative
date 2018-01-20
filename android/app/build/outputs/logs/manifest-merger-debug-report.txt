@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:1:1-32:12
+ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:1:1-35:12
 	package
 		ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:2:5-34
 		INJECTED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml
@@ -17,6 +17,8 @@ ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidMa
 		ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
 ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:6:5-67
+MERGED from [beautifulplaces:react-native-maps:unspecified] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\beautifulplaces\react-native-maps\unspecified\AndroidManifest.xml:9:5-67
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\AndroidManifest.xml:20:5-66
 	android:name
 		ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:6:22-64
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
@@ -26,9 +28,18 @@ MERGED from [com.facebook.react:react-native:0.50.3] X:\GitHub\beautiful-places-
 		ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:7:22-75
 uses-sdk
 ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:9:5-11:41
-MERGED from [beautifulplaces:react-native-vector-icons:unspecified] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\beautifulplaces\react-native-vector-icons\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [beautifulplaces:react-native-navigation:unspecified] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\beautifulplaces\react-native-navigation\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [com.aurelhubert:ahbottomnavigation:2.0.6] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.aurelhubert\ahbottomnavigation\2.0.6\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:recyclerview-v7:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.3.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\AndroidManifest.xml:20:5-44
+MERGED from [com.balysv.materialmenu:material-menu-toolbar:1.5.4] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.balysv.materialmenu\material-menu-toolbar\1.5.4\AndroidManifest.xml:8:5-10:41
+MERGED from [com.balysv.materialmenu:material-menu:1.5.4] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.balysv.materialmenu\material-menu\1.5.4\AndroidManifest.xml:8:5-10:41
+MERGED from [beautifulplaces:react-native-vector-icons:unspecified] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\beautifulplaces\react-native-vector-icons\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.50.3] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.50.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:20:5-43
 MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\AndroidManifest.xml:14:5-16:41
 MERGED from [com.facebook.fresco:fresco:1.3.0] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fresco\1.3.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:drawee:1.3.0] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\1.3.0\AndroidManifest.xml:5:5-7:41
@@ -37,21 +48,17 @@ MERGED from [com.facebook.fresco:imagepipeline:1.3.0] X:\GitHub\beautiful-places
 MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.3.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fbcore:1.3.0] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.3.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.soloader:soloader:0.1.0] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\AndroidManifest.xml:2:3-70
-MERGED from [com.aurelhubert:ahbottomnavigation:2.0.6] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.aurelhubert\ahbottomnavigation\2.0.6\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:design:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:recyclerview-v7:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.3.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:transition:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\AndroidManifest.xml:20:5-44
-MERGED from [com.balysv.materialmenu:material-menu-toolbar:1.5.4] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.balysv.materialmenu\material-menu-toolbar\1.5.4\AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.support:appcompat-v7:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:21:5-23:78
+MERGED from [beautifulplaces:react-native-maps:unspecified] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\beautifulplaces\react-native-maps\unspecified\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-base:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\AndroidManifest.xml:17:5-42
 MERGED from [com.android.support:support-v4:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
 MERGED from [com.android.support:support-core-ui:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-compat:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
-MERGED from [com.balysv.materialmenu:material-menu:1.5.4] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.balysv.materialmenu\material-menu\1.5.4\AndroidManifest.xml:8:5-10:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
@@ -63,25 +70,29 @@ MERGED from [com.balysv.materialmenu:material-menu:1.5.4] X:\GitHub\beautiful-pl
 		INJECTED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml
 		INJECTED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml
 application
-ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:13:5-30:19
+ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:13:5-33:19
 MERGED from [beautifulplaces:react-native-navigation:unspecified] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\beautifulplaces\react-native-navigation\unspecified\AndroidManifest.xml:11:5-18:19
-MERGED from [com.facebook.react:react-native:0.50.3] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.50.3\AndroidManifest.xml:13:5-20
-MERGED from [com.facebook.soloader:soloader:0.1.0] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\AndroidManifest.xml:3:3-17
-MERGED from [org.webkit:android-jsc:r174650] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\org.webkit\android-jsc\r174650\AndroidManifest.xml:2:3-17
 MERGED from [com.aurelhubert:ahbottomnavigation:2.0.6] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.aurelhubert\ahbottomnavigation\2.0.6\AndroidManifest.xml:11:5-20
 MERGED from [com.android.support:design:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:transition:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\AndroidManifest.xml:26:5-20
 MERGED from [com.balysv.materialmenu:material-menu-toolbar:1.5.4] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.balysv.materialmenu\material-menu-toolbar\1.5.4\AndroidManifest.xml:12:5-20
+MERGED from [com.balysv.materialmenu:material-menu:1.5.4] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.balysv.materialmenu\material-menu\1.5.4\AndroidManifest.xml:12:5-20
+MERGED from [com.facebook.react:react-native:0.50.3] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.50.3\AndroidManifest.xml:13:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:26:5-20
+MERGED from [com.facebook.soloader:soloader:0.1.0] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\AndroidManifest.xml:3:3-17
+MERGED from [org.webkit:android-jsc:r174650] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\org.webkit\android-jsc\r174650\AndroidManifest.xml:2:3-17
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-base:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\AndroidManifest.xml:19:5-21:19
 MERGED from [com.android.support:support-v4:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-media-compat:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-ui:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-utils:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-compat:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.balysv.materialmenu:material-menu:1.5.4] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.balysv.materialmenu\material-menu\1.5.4\AndroidManifest.xml:12:5-20
 	android:label
 		ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:16:7-39
 	android:allowBackup
@@ -119,32 +130,66 @@ MERGED from [beautifulplaces:react-native-navigation:unspecified] X:\GitHub\beau
 		ADDED from [beautifulplaces:react-native-navigation:unspecified] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\beautifulplaces\react-native-navigation\unspecified\AndroidManifest.xml:17:13-37
 	android:name
 		ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:29:17-81
+meta-data#com.google.android.geo.API_KEY
+ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:30:7-32:64
+	android:value
+		ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:32:7-62
+	android:name
+		ADDED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:31:7-52
 activity#com.reactnativenavigation.controllers.NavigationActivity
 ADDED from [beautifulplaces:react-native-navigation:unspecified] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\beautifulplaces\react-native-navigation\unspecified\AndroidManifest.xml:12:9-14:86
 	android:configChanges
 		ADDED from [beautifulplaces:react-native-navigation:unspecified] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\beautifulplaces\react-native-navigation\unspecified\AndroidManifest.xml:14:13-83
 	android:name
 		ADDED from [beautifulplaces:react-native-navigation:unspecified] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\beautifulplaces\react-native-navigation\unspecified\AndroidManifest.xml:13:13-84
-android:uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-IMPLIED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
-android:uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
-android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:recyclerview-v7:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.3.1\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:transition:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:appcompat-v7:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-v4:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-fragment:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-media-compat:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-core-ui:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-core-utils:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-compat:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
 	android:value
 		ADDED from [com.android.support:design:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:27:9-31
 	android:name
 		ADDED from [com.android.support:design:25.3.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\AndroidManifest.xml:26:9-47
+android:uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+IMPLIED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:1:1-35:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+android:uses-permission#android.permission.READ_PHONE_STATE
+IMPLIED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:1:1-35:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
+IMPLIED from X:\GitHub\beautiful-places-reactNative\android\app\src\main\AndroidManifest.xml:1:1-35:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from [beautifulplaces:react-native-maps:unspecified] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\beautifulplaces\react-native-maps\unspecified\AndroidManifest.xml:10:5-81
+	android:name
+		ADDED from [beautifulplaces:react-native-maps:unspecified] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\beautifulplaces\react-native-maps\unspecified\AndroidManifest.xml:10:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.gms:play-services-maps:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\AndroidManifest.xml:19:22-76
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\AndroidManifest.xml:21:5-77
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\AndroidManifest.xml:21:19-51
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\AndroidManifest.xml:21:52-75
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\AndroidManifest.xml:19:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:10.0.1] X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\AndroidManifest.xml:20:20-65
