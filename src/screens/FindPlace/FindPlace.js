@@ -49,6 +49,10 @@ class FindPlace extends Component {
       duration: 500,
       useNativeDriver: true
     }).start();
+
+    this.setState({
+      placesLoaded: true
+    });
   };
   render() {
     let content = (

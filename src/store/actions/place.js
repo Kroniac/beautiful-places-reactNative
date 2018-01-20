@@ -1,8 +1,9 @@
 import * as actionTypes from './actionTypes';
 
-export const addPlace = () => {
+export const addPlace = val => {
   return {
-    type: actionTypes.ADD_PLACE
+    type: actionTypes.ADD_PLACE,
+    value: val
   };
 };
 export const deletePlace = key => {

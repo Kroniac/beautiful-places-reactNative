@@ -15,12 +15,26 @@ import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
 import Header from '../../components/UI/HeadingText/HeadingText';
 import PickImage from '../../components/PickImage/PickImage';
 import PickLocation from '../../components/PickLocation/PickLocation';
+import validation from '../../utility/validation';
 
 class SharePlace extends Component {
   constructor(props) {
     super(props);
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
   }
+
+  state = {
+    controls: {
+      placeName: {
+        value: '',
+        valid: false,
+        touched: false,
+        validationRules: {
+          notEmpty: true
+        }
+      }
+    }
+  };
 
   onNavigatorEvent = event => {
     if (event.type === 'NavBarButtonPress') {
@@ -37,6 +51,26 @@ class SharePlace extends Component {
     alert(this.props.value);
   };
 
+  placeNameChangeHandler = val => {
+    this.setState(prevState => {
+      return {
+        controls: {
+          ...prevState.controls,
+          placeName: {
+            ...prevState.controls.placeName,
+            touched: true,
+            value: val,
+            valid: validation(val, prevState.controls.placeName.validationRules)
+          }
+        }
+      };
+    });
+  };
+
+  onAddPlaceHandler = () => {
+    this.props.onAddPlace(this.state.controls.placeName.value);
+  };
+
   render() {
     return (
       <ScrollView>
@@ -45,12 +79,18 @@ class SharePlace extends Component {
           <PickImage />
           <PickLocation />
           <DefaultInput
-            onChangeText={val => this.props.onChangePlace(val)}
+            onChangeText={this.placeNameChangeHandler}
             placeholder="Place Name"
-            value={this.props.value}
+            valid={this.state.controls.placeName.valid}
+            touched={this.state.controls.placeName.touched}
+            value={this.state.controls.placeName.value}
           />
           <View style={styles.buttons}>
-            <Button title="Share The Place" onPress={this.props.onAddPlace} />
+            <Button
+              title="Share The Place"
+              disabled={!this.state.controls.placeName.valid}
+              onPress={this.onAddPlaceHandler}
+            />
           </View>
           {/* <InputPlaces
           changeText={val => this.props.onChangePlace(val)}
@@ -83,15 +123,13 @@ const styles = StyleSheet.create({
 
 mapStateToProps = state => {
   return {
-    placeList: state.places.placeLists,
-    value: state.places.value
+    placeList: state.places.placeList
   };
 };
 
 mapDispatchToProps = dispatch => {
   return {
-    onAddPlace: () => dispatch(actions.addPlace()),
-    onChangePlace: val => dispatch(actions.onChangePlace(val))
+    onAddPlace: val => dispatch(actions.addPlace(val))
   };
 };
 

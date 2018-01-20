@@ -8,13 +8,13 @@ initState = {
 const reducer = (state = initState, action) => {
   switch (action.type) {
     case actionTypes.ADD_PLACE:
-      if (state.value.trim() === '') return state;
+      if (action.value.trim() === '') return state;
       else
         return {
           ...state,
           placeLists: state.placeLists.concat({
             key: Math.random(),
-            name: state.value,
+            name: action.value,
             image: {
               uri:
                 'http://e-cdn-images.deezer.com/images/artist/b2af40d06fb0ccaf3ebee179f61cd80d/200x200-000000-80-0-0.jpg'
