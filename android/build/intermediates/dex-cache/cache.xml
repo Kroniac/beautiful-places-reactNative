@@ -12,6 +12,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\beautifulplaces\react-native-image-picker\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="9f95540d3b14aed0250ba28dd07beece0df87598">
+        <dex dex="X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\pre-dexed\debug\beautifulplaces-react-native-image-picker-unspecified_db7d998fbd9f69f233b8de1e11e417c419eca2dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="X:\GitHub\beautiful-places-reactNative\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fresco\1.3.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"

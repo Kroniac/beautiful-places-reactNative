@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "X:\\GitHub\\beautiful-places-reactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\menu\\stub.xml",
+        "source": "X:\\GitHub\\beautiful-places-reactNative\\android\\app\\build\\intermediates\\exploded-aar\\beautifulplaces\\react-native-navigation\\unspecified\\res\\menu\\stub.xml"
+    },
+    {
+        "merged": "X:\\GitHub\\beautiful-places-reactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\menu\\search_item.xml",
+        "source": "X:\\GitHub\\beautiful-places-reactNative\\android\\app\\build\\intermediates\\exploded-aar\\beautifulplaces\\react-native-navigation\\unspecified\\res\\menu\\search_item.xml"
+    }
+]

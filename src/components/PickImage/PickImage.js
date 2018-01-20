@@ -1,22 +1,40 @@
 import React, { Component } from 'react';
 import { View, Image, Button, StyleSheet } from 'react-native';
+import ImagePicker from 'react-native-image-picker';
 
-const pickImage = () => (
-  <View style={styles.container}>
-    <View style={styles.placeholder}>
-      <Image
-        style={{ flex: 1 }}
-        source={{
-          uri:
-            'http://e-cdn-images.deezer.com/images/artist/b2af40d06fb0ccaf3ebee179f61cd80d/200x200-000000-80-0-0.jpg'
-        }}
-      />
-    </View>
-    <View style={styles.buttons}>
-      <Button title="Pick Image" onPress={() => alert('Pick Image')} />
-    </View>
-  </View>
-);
+class PickImage extends Component {
+  state = {
+    pickedImage: null
+  };
+
+  pickImageHandler = () => {
+    ImagePicker.showImagePicker({ title: 'Pick an Image' }, res => {
+      if (res.didCancel) {
+        console.log('User Cancelled');
+      } else if (res.error) {
+        console.log('Error Occured: ', res.error);
+      } else {
+        this.setState({
+          pickedImage: {
+            uri: res.uri
+          }
+        });
+      }
+    });
+  };
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.placeholder}>
+          <Image style={{ flex: 1 }} source={this.state.pickedImage} />
+        </View>
+        <View style={styles.buttons}>
+          <Button title="Pick Image" onPress={this.pickImageHandler} />
+        </View>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -36,4 +54,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default pickImage;
+export default PickImage;

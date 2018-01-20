@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "X:\\GitHub\\beautiful-places-reactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
+        "source": "X:\\GitHub\\beautiful-places-reactNative\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.50.3\\res\\xml\\preferences.xml"
+    },
+    {
+        "merged": "X:\\GitHub\\beautiful-places-reactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml\\provider_paths.xml",
+        "source": "X:\\GitHub\\beautiful-places-reactNative\\android\\app\\build\\intermediates\\exploded-aar\\beautifulplaces\\react-native-image-picker\\unspecified\\res\\xml\\provider_paths.xml"
+    }
+]
