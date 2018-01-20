@@ -90,8 +90,6 @@ class SharePlace extends Component {
       this.state.controls.placeName.value,
       this.state.controls.location.value
     );
-
-    console.log(this.props.placeList);
   };
 
   render() {

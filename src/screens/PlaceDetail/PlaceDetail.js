@@ -12,6 +12,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/index';
+import MapView from 'react-native-maps';
 
 class placeDetail extends Component {
   state = {
@@ -52,6 +53,21 @@ class placeDetail extends Component {
             style={styles.placeImage}
             source={this.props.selectedPlace.image}
           />
+        </View>
+        <View style={styles.subContainer}>
+          <MapView
+            initialRegion={{
+              ...this.props.selectedPlace.location,
+              latitudeDelta: 0.0122,
+              longitudeDelta:
+                Dimensions.get('window').width /
+                Dimensions.get('window').height *
+                0.0122
+            }}
+            style={styles.map}
+          >
+            <MapView.Marker coordinate={this.props.selectedPlace.location} />
+          </MapView>
         </View>
         <View style={styles.subContainer}>
           <View>
@@ -96,6 +112,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 20,
     textAlign: 'center'
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject
   },
   deleteIcon: {
     height: 50,
