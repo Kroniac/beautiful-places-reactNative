@@ -18,15 +18,32 @@ exports.storeImage = functions.https.onRequest((request, response) => {
     });
     const bucket = gcs.bucket('beautiful-places-79ff6.appspot.com');
     const uuid = uuid();
-    bucket.upload('/tmp/uploaded-image.jpg', {
-      uploadType: 'media',
-      destination: '/places/' + uuid + '.jpg',
-      metadata: {
-        contentType: 'image/jpeg',
-        firebaseStorageDownloadTokens: uuid
+    bucket.upload(
+      '/tmp/uploaded-image.jpg',
+      {
+        uploadType: 'media',
+        destination: '/places/' + uuid + '.jpg',
+        metadata: {
+          contentType: 'image/jpeg',
+          firebaseStorageDownloadTokens: uuid
+        }
+      },
+      (error, file) => {
+        if (!error) {
+          response.status(201).json({
+            imageUrl:
+              'https://firebasestorage.googleapis.com/v0/b/' +
+              bucket.name +
+              '/o/' +
+              encodeURIComponent(file.name) +
+              '?alt=media&token=' +
+              uuid
+          });
+        } else {
+          console.log(error);
+          response.status(500).json({ error: error });
+        }
       }
-    });
+    );
   });
-
-  response.send('Hello from Firebase!');
 });
