@@ -1,5 +1,5 @@
-import { combineReducers, createStore } from 'redux';
-
+import { combineReducers, createStore , applyMiddleware } from 'redux';
+import thunk from 'redux-thunk'
 import placesReducer from './reducers/places';
 
 const rootReducer = combineReducers({
@@ -7,7 +7,7 @@ const rootReducer = combineReducers({
 });
 
 const configureStore = () => {
-  return createStore(rootReducer);
+  return createStore(rootReducer, applyMiddleware(thunk));
 };
 
 

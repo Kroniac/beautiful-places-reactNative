@@ -1,11 +1,15 @@
 import * as actionTypes from './actionTypes';
 
 export const addPlace = (val, locationValue, imageValue) => {
-  return {
-    type: actionTypes.ADD_PLACE,
-    value: val,
-    locationValue: locationValue,
-    imageValue: imageValue
+  return dispatch => {
+    const places = {
+      placeName: val,
+      locationValue: locationValue
+    };
+    fetch('https://beautiful-places-79ff6.firebaseio.com/places.json', {
+      method: 'POST',
+      body: JSON.stringify(places)
+    });
   };
 };
 export const deletePlace = key => {
